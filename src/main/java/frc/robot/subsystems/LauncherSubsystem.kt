@@ -285,6 +285,6 @@ object LauncherSubsystem : AbstractStateSubsystem<LauncherSubsystem>() {
     /**
      * Checks if this subsystem has a possible terminal state
      */
-    override val hasTerminal: Boolean
+    override val isTerminable: Boolean
         get() = false
 }

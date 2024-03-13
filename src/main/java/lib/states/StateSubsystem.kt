@@ -1,7 +1,6 @@
 package lib.states
 
 import edu.wpi.first.wpilibj2.command.Subsystem
-import edu.wpi.first.wpilibj2.command.button.Trigger
 
 interface StateSubsystem<This : StateSubsystem<This>> : Subsystem, StateEventListener, Map<String, State<This>> {
     /**
@@ -19,7 +18,7 @@ interface StateSubsystem<This : StateSubsystem<This>> : Subsystem, StateEventLis
     /**
      * Checks if this subsystem has a possible terminal state
      */
-    val hasTerminal: Boolean
+    val isTerminable: Boolean
 
     /**
      * Gives this subsystem an event to process.
@@ -32,6 +31,4 @@ interface StateSubsystem<This : StateSubsystem<This>> : Subsystem, StateEventLis
      * @see StateEventBroker
      */
     override fun receive(event: StateEvent)
-
-    val triggers: Set<Trigger>
 }
